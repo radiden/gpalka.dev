@@ -1,5 +1,5 @@
 // uno.config.ts
-import { defineConfig, presetIcons, presetWebFonts } from 'unocss'
+import { defineConfig, presetIcons } from 'unocss'
 import { presetWind } from 'unocss'
 import { presetRadix } from 'unocss-preset-radix'
 import { transformerDirectives } from 'unocss'
