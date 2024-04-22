@@ -1,0 +1,13 @@
+---
+interface Props {
+	link: string
+	title: string
+	iconClass: string
+}
+
+const props = Astro.props
+---
+
+<a class="p-4 bg-primary-2 rounded-lg flex items-center justify-center flex-col" href={props.link}>
+	<div class=`w-6 h-6 ${props.iconClass}`></div>{props.title}
+</a>

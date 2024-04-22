@@ -1,0 +1,46 @@
+---
+const { title = "Gabriel's website" } = Astro.props
+import TopBar from '$c/TopBar.astro'
+import '@fontsource/fira-code/700.css'
+import '@fontsource/fira-code/400.css'
+import '@fontsource/ibm-plex-sans'
+import '@fontsource/ubuntu/700.css'
+---
+
+<!doctype html>
+<html lang="en" class="bg-primary-1">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="flex justify-center mx-2 mb-2">
+		<main class="flex flex-col gap-2 w-full max-w-4xl">
+			<TopBar />
+			<slot />
+		</main>
+	</body>
+</html>
+<style is:global>
+	html {
+		font-family: IBM Plex Sans;
+	}
+	p,
+	span,
+	h1,
+	h2,
+	h3 {
+		--uno: text-primary-12;
+	}
+	a {
+		--uno: 'text-accent-12 hover:(underline cursor-pointer)';
+	}
+	code {
+		font-family:
+			Fira Code,
+			monospace;
+	}
+</style>

@@ -1,0 +1,63 @@
+---
+import Layout from '$l/Layout.astro'
+import JobCard from '$c/JobCard.astro'
+---
+
+<Layout title="Gabriel - Resume">
+	<div class="mb-4">
+		<h2 class="mt-0">About me</h2>
+		<p>
+			I'm Gabriel, a 20 year old programmer from Poland and an all things computer enthusiast.
+			I love Linux, messing with electronics, modding/rooting everything humanly possible and
+			messing with software. As a hobby, I play rhythm games and mess with 3D printers. You
+			can find my GitHub on the socials page.
+		</p>
+	</div>
+	<div class="my-2">
+		<h2>Experience</h2>
+		<p>
+			I mainly write code in Golang and JavaScript/TypeScript, but I have dabbled in Rust,
+			Python, Java, C++, C and written C# in my career. For JS frameworks, I have a lot of
+			experience with SvelteKit and I have used Astro to build this website plus AlpineJS for
+			some simple projects. My experience is mainly with full-stack web development.
+		</p>
+	</div>
+	<div class="mt-2">
+		<h2>Work history</h2>
+		<div class="flex flex-col gap-8 mt-4">
+			<JobCard
+				companyName="Hussle"
+				timeWorked="Jan 2022 - Feb 2024"
+				languages={[
+					'Golang',
+					'TypeScript',
+					'SvelteKit',
+					'Tailwind CSS',
+					'PostgreSQL',
+					'GraphQL',
+					'Docker',
+					'Linux'
+				]}
+			>
+				At Hussle I worked on modern hiring tools as a full-stack developer. With a team of
+				two, we built and shipped a product to market from scratch.
+			</JobCard>
+			<JobCard
+				companyName="EX7"
+				timeWorked="5 months (contract)"
+				languages={['C#', 'MSSQL', 'Entity Framework', 'LINQ', 'ASP.NET', 'MVC']}
+			>
+				Initially, I went to EX7 for my apprenticeships, but I was later hired to help with
+				development while still attending school. I worked on e-commerce solutions for
+				distributors while there.
+			</JobCard>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	h2 {
+		--uno: 'font-bold text-4xl text-accent-11 mb-2 mt-4 text-center';
+		font-family: 'Ubuntu';
+	}
+</style>

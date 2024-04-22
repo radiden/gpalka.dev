@@ -1,0 +1,39 @@
+---
+interface Props {
+	companyName: string
+	timeWorked: string
+	languages: string[]
+}
+
+const props = Astro.props
+---
+
+<div class="rounded-xl bg-primary-2">
+	<div class="flex flex-row justify-between p-2 bg-primary-3 rounded-t-lg">
+		<span>{props.companyName}</span>
+		<span>{props.timeWorked}</span>
+	</div>
+	<div class="p-2">
+		<p>
+			<slot />
+		</p>
+	</div>
+	<div class="bg-primary-3 rounded-b-lg">
+		<ul class="text-accent-12 flex flex-row px-2 flex-wrap">
+			{props.languages.map((lang) => <li class="py-2 flex-shrink-0">{lang}</li>)}
+		</ul>
+	</div>
+</div>
+
+<style>
+	span {
+		--uno: font-[Ubuntu] font-bold text-lg text-accent-12;
+	}
+	li::after {
+		content: '•';
+		--uno: mx-2;
+	}
+	li:last-of-type::after {
+		content: '';
+	}
+</style>
