@@ -18,6 +18,7 @@
     "typescript": "^5.4.5"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.5",
     "@iconify-json/carbon": "^1.1.31",
     "@iconify-json/heroicons": "^1.1.20",
     "@unocss/preset-icons": "^0.59.4",
