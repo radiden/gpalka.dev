@@ -1,0 +1,20 @@
+---
+interface Props {
+	link: string
+	title: string
+	description: string
+}
+
+const props = Astro.props
+---
+
+<a
+	class="p-4 bg-primary-2 hover:bg-primary-3 rounded-lg flex flex-row items-center justify-between cursor-pointer"
+	href={props.link}
+>
+	<div class="flex flex-col gap-2">
+		<h3 class="font-bold font-[Ubuntu] text-2xl text-accent-11">{props.title}</h3>
+		<p class="text-primary-11">{props.description}</p>
+	</div>
+	<div class="w-8 h-8 i-carbon-chevron-right"></div>
+</a>

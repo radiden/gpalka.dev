@@ -1,0 +1,76 @@
+---
+import Layout from '$l/Layout.astro'
+import { getCollection } from 'astro:content'
+
+export async function getStaticPaths() {
+	const blogEntries = await getCollection('posts')
+	return blogEntries.map((entry) => ({
+		params: { slug: entry.slug },
+		props: { entry }
+	}))
+}
+
+const { entry } = Astro.props
+const { Content } = await entry.render()
+---
+
+<Layout>
+	<div class="text-center flex flex-col gap-4">
+		<h1 class="title-hero">{entry.data.title}</h1>
+		<p class="text-primary-11">{entry.data.description}</p>
+	</div>
+	<hr class="border-primary-6 my-4" />
+	<div class="markdown">
+		<Content />
+	</div>
+</Layout>
+
+<style lang="sass" is:global>
+	.markdown
+
+		h1,
+		h2,
+		h3
+			--uno: 'text-accent-11 font-[Ubuntu] my-4'
+
+		p
+			--uno: 'my-2'
+
+		hr
+			--uno: 'border-primary-6 my-4'
+
+		h1
+			--uno: 'text-4xl'
+
+		h2
+			--uno: 'text-3xl'
+
+		h3
+			--uno: 'text-xl'
+
+		ul
+			--uno: 'text-primary-12'
+			list-style-type: disc
+			list-style-position: inside
+
+		ol
+			--uno: 'text-primary-12'
+			list-style-type: decimal
+			list-style-position: inside
+
+		li
+			--uno: 'my-2'
+
+		blockquote
+			--uno: 'bg-primary-2 p-4 font-italic rounded-lg'
+
+			p
+				--uno: 'text-primary-11'
+				margin: 0!important
+
+		.astro-code
+			--uno: 'p-4 rounded-lg'
+
+		a
+			--uno: 'text-accent-12 hover:(cursor-pointer underline)'
+</style>

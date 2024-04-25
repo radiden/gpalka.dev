@@ -11,9 +11,9 @@ import '@fontsource/ubuntu/700.css'
 <html lang="en" class="bg-primary-1">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="Welcome to my website!" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -26,21 +26,20 @@ import '@fontsource/ubuntu/700.css'
 </html>
 <style is:global>
 	html {
-		font-family: IBM Plex Sans;
+		font-family: 'IBM Plex Sans';
 	}
 	p,
 	span,
 	h1,
 	h2,
-	h3 {
+	h3,
+	a {
 		--uno: text-primary-12;
 	}
-	a {
-		--uno: 'text-accent-12 hover:(underline cursor-pointer)';
+	a.link {
+		--uno: 'hover:(underline cursor-pointer)';
 	}
 	code {
-		font-family:
-			Fira Code,
-			monospace;
+		font-family: 'Fira Code', monospace;
 	}
 </style>
