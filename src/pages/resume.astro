@@ -6,7 +6,7 @@ import JobCard from '$c/JobCard.astro'
 <Layout title="Gabriel - Resume">
 	<h2 class="mt-0!">About me</h2>
 	<p>
-		I'm Gabriel, a 20 year old programmer from Poland and an all things computer enthusiast. I
+		I'm Gabriel, a 21 year old programmer from Poland and an all things computer enthusiast. I
 		love Linux, messing with electronics, modding/rooting everything humanly possible and
 		messing with software. As a hobby, I play rhythm games and mess with 3D printers. You can
 		find my GitHub on the socials page.
@@ -21,6 +21,15 @@ import JobCard from '$c/JobCard.astro'
 	<h2>Work history</h2>
 	<div class="flex flex-col gap-4">
 		<JobCard
+			companyName="WEBCON"
+			timeWorked="Nov 2024 - Current"
+			languages={['WEBCON BPS', 'MSSQL', 'Windows Server', 'C#', 'SvelteKit']}
+			website="https://webcon.com/"
+			>Working as a support engineer for corporate clients, keeping all of their business
+			processes running while also helping with maintenance of miscellaneous projects within
+			the company.
+		</JobCard>
+		<JobCard
 			companyName="Hussle"
 			timeWorked="Jan 2022 - Feb 2024"
 			languages={[
@@ -33,18 +42,18 @@ import JobCard from '$c/JobCard.astro'
 				'Docker',
 				'Linux'
 			]}
-		>
-			At Hussle I worked on modern hiring tools as a full-stack developer. With a team of two,
-			we built and shipped a product to market from scratch.
+			website="https://hussle.work/"
+			>In a team of two developers wrote a web application used for finding job candidates
+			from scratch, worked on: database schema, e-mail notifications, processing
+			user-generated content, login system, user permission system, code review.
 		</JobCard>
 		<JobCard
 			companyName="EX7"
 			timeWorked="5 months (contract)"
 			languages={['C#', 'MSSQL', 'Entity Framework', 'LINQ', 'ASP.NET', 'MVC']}
-		>
-			Initially, I went to EX7 for my apprenticeships, but I was later hired to help with
-			development while still attending school. I worked on e-commerce solutions for
-			distributors while there.
+			website="https://ex7.pl"
+			>Hired after an internship, worked on integrating the in-house software for commercial
+			distribution companies with some of the largest e-commerce services.
 		</JobCard>
 	</div>
 </Layout>
@@ -53,5 +62,8 @@ import JobCard from '$c/JobCard.astro'
 	h2 {
 		--uno: 'font-bold text-4xl text-accent-11 my-2 text-center';
 		font-family: 'Ubuntu';
+	}
+	a {
+		--uno: 'text-accent-11';
 	}
 </style>
